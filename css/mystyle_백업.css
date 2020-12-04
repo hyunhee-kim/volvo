@@ -1,0 +1,391 @@
+    /*23.google web fonts지정*/
+    @import url(https://fonts.googleapis.com/earlyaccess/jejugothic.css);
+    @import url('https://fonts.googleapis.com/css2?family=Saira+Condensed:wght@200;400;500&display=swap');
+    .bo{
+        border:1px solid red;
+    }
+    body{
+        font-family: 'Jeju Gothic','Saira Condensed', sans-serif;
+        height: 100vh;
+    }
+    :root{
+       --black1 : #000000;
+       --black2 : #2B2929;
+       --white:white;
+       --blue : #0E1632;
+       --blue2 : #5B80FF;
+    }
+ul{
+    list-style: none;
+}
+    /*5.캐로셀 안의 이미지 사이즈를 동일하게 맞추거나 화면높이에 이미지 높이 맞추기위해 img태그를 삭제하고 .carousel-item에 이미지를 css로 넣고 코딩으로 사이즈를 맞추기*/
+
+    /*10.캐로셀 밖으로 인디케이터 흘러 넘쳐도 숨겨서 스크롤 생기지 않도록 설정*/
+    #topCarousel{
+        overflow: hidden;
+    }
+
+/*캐로셀 이미지들---------------------------*/
+    #topCarousel .carousel-item:nth-of-type(1){
+        background: url(../img2/carousel_01_1.png) no-repeat center / cover;
+        height: 100vh;
+    }
+    #topCarousel .carousel-item:nth-of-type(2){
+        background: url(../img2/carousel_02.png) no-repeat center / cover;
+        height: 100vh;
+    }
+    #topCarousel .carousel-item:nth-of-type(3){
+        background: url(../img2/carousel_03.png) no-repeat center / cover;
+        height: 100vh;
+    }
+    /*7.캐로셀 안에 캡션대신 넣은 이미지 위치 맞추기*/
+    #topCarousel .carousel-caption{
+        /*border:3px solid red;*/
+        position: absolute;
+    }
+    .ca1 img{
+        position: absolute;
+    }
+
+   /* #topCarousel .carousel-item:nth-of-type(1) .carousel_in_img1 img{
+        bottom: -50px;
+        left: -160px;
+    }*/
+
+/*1번캐로셀 텍스트와 이미지에 위치 잡기-----------------*/
+     #topCarousel .carousel-item:nth-of-type(1) .carousel_in_img2 img{
+        bottom: -70px;
+        left: 10%;
+        /*transform: scale(0.8);*/
+    }
+     #topCarousel .carousel-item:nth-of-type(1) .carousel_in_img3 img{
+        bottom: 520px;
+        left: 0%;
+        transform:scale(0.8);
+        z-index: 1
+    }
+     #topCarousel .carousel-item:nth-of-type(1) .carousel_in_img4 img{
+        bottom: -20px;
+        left: -25%;
+        width: 979.5px;
+        height:582px;
+
+    }
+
+/*2번캐로셀 텍스트와 이미지에 위치 잡기-----------------*/
+    #topCarousel .carousel-item:nth-of-type(2) h5 img{
+        bottom: 530px;
+        left: 0px;
+    }
+
+
+/*3번캐로셀 텍스트와 이미지에 위치 잡기-----------------*/
+    #topCarousel .carousel-item:nth-of-type(3) h5 img{
+        bottom: 630px;
+        right:-15%;
+        transform:scale(0.8);
+    }
+
+    /*9.캐로셀 좌우 버튼을 마우스를 올리면 나타나도록 설정*/
+    #topCarousel .carousel-control-next{
+        right:-200px;
+        transition: right 1s;
+    }
+    #topCarousel .carousel-control-prev{
+        left:-200px;
+        transition: left 1s;
+    }
+    #topCarousel:hover .carousel-control-next{
+        right:0px;
+        z-index: 999999
+    }
+    #topCarousel:hover .carousel-control-prev{
+        left:0px;
+        z-index: 999999
+    }
+    /*11. 캐로셀 좌우 버튼 호버시 색상 바꾸기*/
+    #topCarousel .carousel-control-next:hover, #topCarousel .carousel-control-prev:hover{
+        color:var(--blue);
+    }
+    /*12. 캐로셀 하단 인디케이터 버튼 활성화시 스타일 변경*/
+    #topCarousel .carousel-indicators .active{
+        background-color:var(--white);
+    }
+    /*16.loading img 위치 잡기*/
+    .loading .d-flex img{
+        /*border:2px solid red;*/
+        position: absolute;
+        top:50%;
+        width: 200px;
+        margin-top: -48px;
+    }
+    .loading{
+        height: 100vh;
+        border:1px solid;
+        background-color: black;
+        width: 100%;
+    }
+    /*21.navbar 배경색 customize*/
+    .bg-black{
+        background-color: var(--black1);
+    }
+    /*25.네브바의 height 설정하고 txt의 스타일 변경*/
+    .navbar-nav .nav-link{
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    .navbar-dark .navbar-nav .active>.nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show>.nav-link{
+            color:var(--white);
+    }
+    .navbar-dark .navbar-nav .nav-link{
+        color:var(--blue2);
+    }
+/*product 이미지 호버 꾸미기-----*/
+
+    .product_1_title{
+        transform: scale(0.8);
+    }
+    .product_overlay {
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          background-color:black;
+          opacity: 0.5;
+          overflow: hidden;
+          width: 100%;
+          height: 0;
+          transition: .5s ease;
+        }
+    .product_card:hover .product_overlay {
+           height: 100%;
+        }
+    .product_text {
+          color: white;
+          font-size: 1em;
+          position: absolute;
+          width: 80%;
+          top: 50%;
+          left: 50%;
+          -webkit-transform: translate(-50%, -50%);
+          -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+        } 
+
+  /*내부 인테리어 Fancy box------------- */
+    
+        #interior{
+            position: relative;
+        }  
+/*시트터치*/        
+        #interior a:nth-of-type(1){
+            left: 25%;
+            bottom:17%;
+            z-index: 99;
+            position: absolute;
+            width: 7rem;
+        }
+ /*기어 터치*/     
+         #interior a:nth-of-type(2){
+             right: 44%;
+            bottom:23%;
+            z-index: 99;
+            position: absolute;
+             width: 7rem;
+        }
+  /*네비터치*/       
+         #interior a:nth-of-type(3){
+            right: 36%;
+            bottom:44%;
+            z-index: 99;
+            position: absolute;
+             width: 7rem;
+        }
+/*사운드 터치*/
+         #interior a:nth-of-type(4){
+            right: 33%;
+            bottom:54.5%;
+            z-index: 99;
+            position: absolute;
+             width: 7rem;
+        }
+/*히터터치*/
+        #interior a:nth-of-type(5){
+            right: 3%;
+            bottom:41%;
+            z-index: 99;
+            position: absolute;
+            width: 7rem;
+        }
+
+         @media (max-width: 1250px) {
+          #interior a:nth-of-type(5), #interior a:nth-of-type(4),
+           #interior a:nth-of-type(3), #interior a:nth-of-type(2),
+            #interior a:nth-of-type(1){
+            width: 4em;
+            }
+        }
+        @media (max-width: 750px) {
+          #interior a:nth-of-type(5), #interior a:nth-of-type(4),
+           #interior a:nth-of-type(3), #interior a:nth-of-type(2),
+            #interior a:nth-of-type(1){
+            width: 3em;
+            }
+        }
+
+/*차 색상 변경--------------*/
+        .change_btn{
+            width: 100px;
+            cursor: pointer;
+        }
+       
+        @media (max-width: 576px) {
+          .change_btn{
+            width: 70px;
+            }
+        }
+
+        .btn_change div{
+            float: left;
+        }
+
+ /*29.세번째 메뉴의 배경이미지*/
+    section#heritage{
+        background: url(../img2/safety_heritage1.png) no-repeat center / cover fixed;
+        padding-top: 180px;
+        padding-bottom: 180px;
+    }
+    /*34.scrollspy를 위한 설정*/
+    body {
+      position: relative;
+    }
+    /*39.윈도우 창에 가로스크롤 생기는 부분 처리*/
+    /*53.로딩시 가로 세로 스크롤 모두 없애기*/
+    html,body{
+        /*overflow-x: hidden;*/
+        overflow: hidden;
+    }
+
+    .heritage1{
+        position: absolute;
+        left: 10%;
+        transform: scale(0.8);
+    }
+    .about_img5{
+        width: 550px;
+    }
+    @media (max-width: 959px) {
+          .about_img5{
+            width: 550px;
+            }
+        }
+
+
+/*헤리티지 비디오 위치잡기*/
+    .heritage_vd{
+        position: absolute;
+        top:15%;
+        width: 294px;
+        height: auto;
+        margin-left: 11%;
+        z-index: 99;
+    }
+   @media (max-width: 950px){
+          .heritage_vd{
+            /*width: 50px;*/
+            }
+        }
+  @media (max-width:823px){
+          .heritage_vd{
+            width: 260px;
+            }
+        }
+  @media (max-width:768px){
+          .heritage_vd{
+            width: 200px;
+            }
+        }
+   @media (max-width:640px){
+          .heritage_vd{
+            width: 250px;
+            }
+        }      
+    @media (max-width:280px){
+          .heritage_vd{
+            width: 150px;
+            }
+        } 
+
+
+    .bebetter_vd1{
+        position: absolute;
+        top:0%;
+        width: 294px;
+        height: auto;
+        margin-left: 30%;
+        z-index: 99;
+    } 
+
+  @media (max-width:750px){
+          .bebetter_vd1{
+            width: 150px;
+            top:-10%;
+            margin-left: 10%;
+            }
+          .recharged_txt{
+            position: relative;
+            top:100px;
+          }  
+        }     
+
+    .bebetter_vd2{
+        position: absolute;
+        top:15%;
+        width: 294px;
+        height: auto;
+        margin-left: 11%;
+        z-index: 99;
+    } 
+    @media (max-width:750px){
+          .bebetter_vd2{
+            width: 150px;
+            top:350px;
+            margin-left: 35%;
+            }
+        }
+
+
+ /*플로깅 영상위치 잡기*/   
+    .plogging_vd{
+        position: absolute;
+        top:-0.5%;
+        width: 98%;
+        height: auto;
+        margin-left:0%;
+        z-index: 99;
+    }  
+    @media (max-width:400px){
+          .bebetter_vd1,.bebetter_vd2{
+            width: 150px;
+            }
+        }      
+
+     section#bebetter{
+        background: url(../img2/bebetter_img.jpg) no-repeat center / cover fixed;
+        padding-top: 180px;
+        padding-bottom: 180px;
+    }
+    .card{
+        border: none;
+    }
+
+    /*42.다섯번째 메뉴의 배경이미지*/
+    section#cf{
+        background: url(../img2/20201112_012824_3.png) no-repeat center / cover fixed;
+        padding: 80px;
+    }
+    /*52.card-body안의 텍스트 스타일*/
+    .card-body .card-title{
+        color:#0E1632;
+    }
+    .card-bo
